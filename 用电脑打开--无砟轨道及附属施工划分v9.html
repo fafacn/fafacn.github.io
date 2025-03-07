@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>施工任务动态划分（2025年3月7日）</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .header-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .producer {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 12px;
+            color: #666;
+        }
+        .task {
+            margin-bottom: 60px;
+        }
+        .progress-container {
+            position: relative;
+            height: 140px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            position: absolute;
+            height: 60px;
+            top: 40px;
+            animation: progress 4s linear infinite;
+        }
+        @keyframes progress {
+            0% { transform: scaleX(0); transform-origin: left; }
+            100% { transform: scaleX(1); transform-origin: left; }
+        }
+        .static-info {
+            position: absolute;
+            top: 50px;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .flag-icon {
+            width: 24px;
+            height: 24px;
+            background: red;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            margin-right: 8px;
+        }
+        .divider {
+            position: absolute;
+            top: 40px;
+            bottom: 0;
+            border-left: 2px dashed #000;
+        }
+        .milestone-label {
+            position: absolute;
+            background: white;
+            padding: 2px 5px;
+            font-size: 12px;
+            z-index: 2;
+        }
+        .scale-container {
+            position: relative;
+            height: 40px;
+            margin-top: 10px;
+        }
+        .scale-mark {
+            position: absolute;
+            bottom: 0;
+            width: 1px;
+            height: 15px;
+            background: #666;
+        }
+        .scale-label {
+            position: absolute;
+            bottom: -22px;
+            font-size: 12px;
+            white-space: nowrap;
+            padding: 0 5px;
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+        }
+        /* 组样式 */
+        .group1 { background: #ff6b6b; }
+        .group2 { background: #4ecdc4; }
+        .group3 { background: #96ceff; }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .progress-container { height: 120px; }
+            .progress-bar { height: 40px; top: 30px; }
+            .static-info { top: 30px; }
+            .milestone-label { font-size: 10px; }
+            .scale-label { font-size: 10px; }
+            .producer { font-size: 10px; }
+        }
+        /* 控制按钮 */
+        #controlBtn {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>施工任务动态划分（2025年3月7日）</h1>
+        <div class="producer">制作：开水 18691909111</div>
+    </div>
+    <button id="controlBtn" onclick="toggleAnimation()">暂停动画</button>
+
+    <!-- 线下附属工程 -->
+    <div class="task">
+        <h2>线下附属工程、桥面系工程（全长35.24公里）</h2>
+        <div class="progress-container">
+            <!-- 第一组 -->
+            <div class="progress-bar group1" style="width: 54.6%; left: 0%;"></div>
+            <div class="static-info" style="left: 0;">
+                <div class="flag-icon"></div>
+                <span>第一现场组 (19445.43米)</span>
+            </div>
+            <!-- 第一组起终点 -->
+            <div class="milestone-label" style="left: -5px; top: 10px;">545#墩</div>
+            <div class="milestone-label" style="left: -5px; top: 25px;">DIK332+848.37</div>
+            
+            <div class="milestone-label" style="left: 54.6%; top: 10px;">224#墩</div>
+            <div class="milestone-label" style="left: 54.6%; top: 25px;">DIK352+293.8</div>
+
+            <!-- 分割线 -->
+            <div class="divider" style="left: 54.6%;"></div>
+
+            <!-- 第二组 -->
+            <div class="progress-bar group2" style="width: 45.4%; left: 54.6%;"></div>
+            <div class="static-info" style="left: 54.6%;">
+                <div class="flag-icon"></div>
+                <span>第二现场组 (15795.48米)</span>
+            </div>
+            <!-- 第二组终点 -->
+            <div class="milestone-label" style="right: -5px; top: 10px;">692#墩</div>
+            <div class="milestone-label" style="right: -5px; top: 25px;">DIK368+089.28</div>
+        </div>
+        <!-- 刻度 -->
+        <div class="scale-container">
+            <div class="scale-mark" style="left:0%;"></div>
+            <div class="scale-label" style="left:0%;">0km</div>
+        </div>
+    </div>
+
+    <!-- 无砟轨道工程 -->
+    <div class="task">
+        <h2>无砟轨道工程（全长35.24公里）</h2>
+        <div class="progress-container">
+            <!-- 第一组 -->
+            <div class="progress-bar group1" style="width: 42.9%; left: 0%;"></div>
+            <div class="static-info" style="left: 0;">
+                <div class="flag-icon"></div>
+                <span>第一现场组 (15129.75米)</span>
+            </div>
+            <!-- 第一组起终点 -->
+            <div class="milestone-label" style="left: -5px; top: 10px;">545#墩</div>
+            <div class="milestone-label" style="left: -5px; top: 25px;">DIK332+848.37</div>
+            
+            <div class="milestone-label" style="left: 42.9%; top: 10px;">90#墩</div>
+            <div class="milestone-label" style="left: 42.9%; top: 25px;">DIK347+978.12</div>
+
+            <!-- 梁场 -->
+            <div class="progress-bar group3" style="width: 27.8%; left:42.9%;"></div>
+            <div class="static-info" style="left: 42.9%;">
+                <div class="flag-icon"></div>
+                <span>梁场 (9762.99米)</span>
+            </div>
+            <!-- 梁场终点 -->
+            <div class="milestone-label" style="left: 70.7%; top: 10px;">391#墩</div>
+            <div class="milestone-label" style="left: 70.7%; top: 25px;">DIK357+741.11</div>
+
+            <!-- 分割线 -->
+            <div class="divider" style="left:42.9%;"></div>
+            <div class="divider" style="left:70.7%;"></div>
+
+            <!-- 第二组 -->
+            <div class="progress-bar group2" style="width: 29.3%; left: 70.7%;"></div>
+            <div class="static-info" style="left: 70.7%;">
+                <div class="flag-icon"></div>
+                <span>第二现场组 (10348.17米)</span>
+            </div>
+            <!-- 第二组终点 -->
+            <div class="milestone-label" style="right: -5px; top: 10px;">692#墩</div>
+            <div class="milestone-label" style="right: -5px; top: 25px;">DIK368+089.28</div>
+        </div>
+        <!-- 刻度 -->
+        <div class="scale-container">
+            <div class="scale-mark" style="left:0%;"></div>
+            <div class="scale-label" style="left:0%;">0km</div>
+        </div>
+    </div>
+
+    <script>
+        // 动态刻度生成
+        document.querySelectorAll('.scale-container').forEach(container => {
+            const totalWidth = 35240.91;
+            for(let i=0; i<=totalWidth; i+=1000) {
+                const pos = (i / totalWidth) * 100;
+                const mark = document.createElement('div');
+                mark.className = 'scale-mark';
+                mark.style.left = `${pos}%`;
+                container.appendChild(mark);
+                
+                if(i % 2000 === 0 || i === totalWidth) {
+                    const label = document.createElement('div');
+                    label.className = 'scale-label';
+                    label.style.left = `${pos}%`;
+                    label.textContent = i === totalWidth 
+                        ? '35.24km' 
+                        : `${(i/1000).toFixed(0)}km`;
+                    // 处理右侧标签位置
+                    if(pos > 95) {
+                        label.style.transform = 'translateX(-100%) rotate(45deg)';
+                        label.style.textAlign = 'right';
+                    }
+                    container.appendChild(label);
+                }
+            }
+        });
+
+        // 动画控制
+        let isPlaying = true;
+        function toggleAnimation() {
+            const btn = document.getElementById('controlBtn');
+            const bars = document.querySelectorAll('.progress-bar');
+            if(isPlaying) {
+                bars.forEach(bar => bar.style.animationPlayState = 'paused');
+                btn.textContent = '播放动画';
+            } else {
+                bars.forEach(bar => bar.style.animationPlayState = 'running');
+                btn.textContent = '暂停动画';
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+</html>
